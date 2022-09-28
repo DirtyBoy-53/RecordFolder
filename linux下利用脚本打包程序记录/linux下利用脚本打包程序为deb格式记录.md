@@ -42,22 +42,21 @@ exit;;
 esac
 cat <<EOF
 ***********************************************************
-1) 安装在/opt/ha/lib/ocf/resource.d/heartbeat/下
-2）安装在/opt/ha/usr/lib/ocf/resource.d/heartbeat/下
+1) 安装在/opt/nvidia/LaserFusion/下
+2）安装在/home/nvidia/LaserFusion/下
 3）⾃定义
 4）exit
 EOF
 read -p "你希望此安装包安装在哪⾥：" choice
 case $choice in
 1)
-sudo mkdir -p $softname/opt/ha/lib/ocf/resource.d/heartbeat
-softpath=$softname/opt/ha/lib/ocf/resource.d/heartbeat;;
+sudo mkdir -p $softname/opt/nvidia/LaserFusion
+softpath=$softname/opt/nvidia/LaserFusion/;;
 2)
-sudo mkdir -p
-$softname/opt/ha/usr/lib/ocf/resource.d/heartbeat
-softpath=$softname/opt/ha/usr/lib/ocf/resource.d/heartbeat/;;
+sudo mkdir -p $softname/home/nvidia/LaserFusion
+softpath=$softname/home/nvidia/LaserFusion/;;
 3)
-read -p "请⼿输入你想要安装的⽬录：" wheredir
+read -p "请⼿动输入你想要安装的目录" wheredir
 softpath=$softname/$wheredir;;
 4)
 cecho 32 Byebye
@@ -115,11 +114,21 @@ make-soft
 
 [![xm3Ibt.png](https://s1.ax1x.com/2022/09/28/xm3Ibt.png)](https://imgse.com/i/xm3Ibt)
 
-
-
-
+4、执行脚本`sudo ./MakeScript.sh`
 
 [![xm35DI.png](https://s1.ax1x.com/2022/09/28/xm35DI.png)](https://imgse.com/i/xm35DI)
-[![xm3TVP.png](https://s1.ax1x.com/2022/09/28/xm3TVP.png)](https://imgse.com/i/xm3TVP)
-[![xm37Uf.png](https://s1.ax1x.com/2022/09/28/xm37Uf.png)](https://imgse.com/i/xm37Uf)
+
+5、根据提示录入信息
+
+注意：
+
+- 填写程序名称时，不要出现main字符
+
+- 填写版本号时，一定要使用数字开头，建议按照图中的格式填写
+- 制作的平台根据需求自行判断，选择对应的序号即可
+- 选择安装路径建议选择第2项
+
+[![xmGnyj.png](https://s1.ax1x.com/2022/09/28/xmGnyj.png)](https://imgse.com/i/xmGnyj)
+
+6、软件打包完成后，会在MakeScript.sh相同目录下创建一个build文件夹存放打包好的文件。
 [![xm34KA.png](https://s1.ax1x.com/2022/09/28/xm34KA.png)](https://imgse.com/i/xm34KA)
